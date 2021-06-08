@@ -30,43 +30,13 @@ export default function Login() {
       localStorage.setItem(TOKEN_STORAGE_KEY, loginData.token);
 
       // Redirect to the home page
-      history.push("/");
+      history.push("/conversation");
     } catch (e) {
       console.error(e);
     }
   };
 
   return (
-      /*
-    <div className={"joinOuterContainer"}>
-      <div className={"joinInnerContainer"}>
-        <h1 className={"heading"}>Login</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-                className={"joinInput"}
-                required
-                placeholder="E-mail"
-                type="email"
-                onChange={handleEmailChange}
-                value={email}
-            />
-            <br />
-            <input
-                required
-                placeholder="Password"
-                type="password"
-                onChange={handlePasswordChange}
-                value={password}
-                className={"joinInput"}
-            />
-            <br />
-            <button className={"button"} type="submit">Login</button>
-          </form>
-      </div>
-
-    </div>
-
-       */
       <div>
         <div className="leftBox">
           <div className="card card1">

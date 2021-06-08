@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Conversation from "./pages/Conversation";
 import Companies from "./pages/Companies";
 import Login from "./pages/Login";
-import Home from "./pages/Home";
 import React from "react";
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
         <p>Welcome to the WeAllChat</p>
         <BrowserRouter>
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={Login} />
             <Route path="/companies" component={Companies} />
             <Route path="/conversation" component={Conversation} />
             <Route path="/login" component={Login} />
