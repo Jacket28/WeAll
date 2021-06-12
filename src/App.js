@@ -2,8 +2,10 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Conversation from "./pages/Conversation";
 import Companies from "./pages/Companies";
+import Applicant from "./pages/Applicant";
 import Login from "./pages/Login";
 import React from "react";
+import Conversations from "./pages/Conversations";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Switch>
             <Route path="/" exact component={Login} />
             <Route path="/companies" component={Companies} />
+            <Route path="/applicants" component={Applicant} />
+            <Route path="/conversations" component={Conversations} />
             <Route path="/conversation" component={Conversation} />
             <Route path="/login" component={Login} />
           </Switch>

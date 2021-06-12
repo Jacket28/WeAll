@@ -28,7 +28,7 @@ class Input extends Component {
             value={this.state.text}
             type="text"
             placeholder="Enter your message and press ENTER"
-            autofocus="true"
+            autoFocus={true}
           />
           <button style={{fontSize: 50,backgroundColor: "orangered", color: "white",border: "none", borderRadius: 8, marginLeft: 10, padding: 5|10 }}>Send</button>
         </form>
