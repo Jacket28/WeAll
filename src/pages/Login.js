@@ -4,8 +4,10 @@ import { TOKEN_STORAGE_KEY } from "../utils/request";
 import { useHistory } from "react-router-dom";
 
 import './Login.css';
+import {useIsUserLoggedInContext} from "../services/login-service";
 
 export default function Login() {
+  const {state, dispatch} = useIsUserLoggedInContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,7 +30,7 @@ export default function Login() {
 
       // Save the token to localStorage & redirect to the home page
       localStorage.setItem(TOKEN_STORAGE_KEY, loginData.token);
-
+      dispatch({type: "LOG_IN"});
       // Redirect to the home page
       history.push("/");
     } catch (e) {
@@ -96,18 +98,6 @@ export default function Login() {
               <p>Don't have an account?
                 <a href="https://app.weallbackend.ch/inscription" className="btn-white">Create new</a>
               </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="rightBox">
-          <div className="card2">
-            <div className="my-auto mx-md-5 px-md-5 right">
-              <h3 className="text-white">What is WeAllChat ?</h3> <small className="text-white">WeAllChat offers you
-              the chance to increase your professional network by chatting with one or more company. To do so, you
-              must first of all get matched with a specific company and then you will be able to break the ice with
-              some already pre-existent answer.
-            </small>
             </div>
           </div>
         </div>
