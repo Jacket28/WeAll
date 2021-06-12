@@ -39,69 +39,35 @@ export default function Login() {
   };
 
   return (
-      /*
-    <div className={"joinOuterContainer"}>
-      <div className={"joinInnerContainer"}>
-        <h1 className={"heading"}>Login</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-                className={"joinInput"}
-                required
-                placeholder="E-mail"
-                type="email"
-                onChange={handleEmailChange}
-                value={email}
-            />
-            <br />
-            <input
-                required
-                placeholder="Password"
-                type="password"
-                onChange={handlePasswordChange}
-                value={password}
-                className={"joinInput"}
-            />
-            <br />
-            <button className={"button"} type="submit">Login</button>
-          </form>
-      </div>
-
-    </div>
-
-       */
       <div>
-        <div className="leftBox">
-          <div className="card card1">
-            <div className="row justify-content-center my-auto">
-              <div className="col-md-8 col-10 my-5">
-                <div className="row justify-content-center px-3 mb-3">
-                </div>
-                <h3 className="mb-5 text-center heading">WeAllChat</h3>
+        <div className="uk-container">
+          <div className="uk-grid-margin uk-grid uk-grid-stack">
+              <div className="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large"   >
+                <div className="uk-card-header">
+                <h3 className="mb-5 text-center ">Login - WeAll</h3></div>
+                <div className="uk-card-body">
                 <h6 className="msg-info">Please login to your account</h6>
-                <form onSubmit={handleSubmit}>
-                <div>Username<input
-                    required type="email" id="email" name="email" placeholder="Email" onChange={handleEmailChange}
-                    value={email} className="form-control"/>
-                </div>
-                <div>Password <input
-                    required type="password" id="psw" name="psw" placeholder="Password" onChange={handlePasswordChange}
-                    value={password} className="form-control"/>
-                </div>
 
-                <div className="row justify-content-center my-3 px-3">
-                  <button className="btn-block btn-color" type="submit">Let's chat !</button>
-                </div>
+                <form onSubmit={handleSubmit}>
+                  <input
+                      required type="email" id="email" name="email" placeholder="Email" onChange={handleEmailChange}
+                      value={email} className="form-control"/>
+                  <input
+                      required type="password" id="psw" name="psw" placeholder="Password" onChange={handlePasswordChange}
+                      value={password} className="form-control"/>
+                  <div className="row justify-content-center">
+                    <button className="btn-block btn-color" type="submit">Validate</button>
+                  </div>
                 </form>
+                </div>
+                <div className="uk-card-footer">
+                  <p>Don't have an account? Click
+                  <a href="https://app.weallbackend.ch/inscription"> here</a></p>
+                </div>
               </div>
             </div>
-            <div className="bottom text-center mb-5">
-              <p>Don't have an account?
-                <a href="https://app.weallbackend.ch/inscription" className="btn-white">Create new</a>
-              </p>
-            </div>
-          </div>
         </div>
-
       </div>
+
 );
 }

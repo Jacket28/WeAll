@@ -12,17 +12,22 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <NavigationBar />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/companies" component={Companies} />
-            <Route path="/conversation" component={Conversation} />
-            <Route path="/login" component={Login} />
-          </Switch>
+            <header className="App-header">
+                <p>Welcome to the WeAllChat</p>
+                <img alt="logo" src="https://i.imgur.com/ywJF7mz.png" width = "100" height="100"/>
+            </header>
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/companies" component={Companies} />
+                <Route path="/conversation" component={Conversation} />
+                <Route path="/login" component={Login} />
+            </Switch>
+            <footer className="App-footer">
+                <p>je suis le footer</p>
+            </footer>
+
         </BrowserRouter>
-        <header className="App-header">
-          <img alt="logo" src="https://i.imgur.com/ywJF7mz.png" width = "100" height="100"/>
-          <p>Welcome to the WeAllChat</p>
-        </header>
+
       </div>
   );
 }

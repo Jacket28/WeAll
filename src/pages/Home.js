@@ -10,12 +10,12 @@ export default function Home() {
   return (
     <>
 
-      <Link className="App-link" to={`/companies`}>
+{/*      <Link className="App-link" to={`/companies`}>
         See List of Companies (Example)
       </Link>
       <Link className="App-link" to={`/conversation`}>
         Go To Conversation (Example)
-      </Link>
+      </Link>*/}
     </>
   );
 }
