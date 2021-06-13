@@ -1,9 +1,3 @@
-body {
-    color: #ffffff;
-    overflow-x: hidden;
-    height: 100%;
-    background-color: #414b71;
-}
 
 h3 {
     font-size: 40px ;
@@ -15,6 +9,11 @@ h6 {
     font-size: 22px ;
     padding-bottom: 20px;
     color: black;
+}
+
+.uk-grid {
+    position: center;
+    margin-left: 0px;
 }
 
 input,

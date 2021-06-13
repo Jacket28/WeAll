@@ -21,7 +21,7 @@ export const NavigationBar = () => {
     return (
 
         <nav className="uk-navbar-container" uk-navbar>
-            <div className="uk-navbar-left">
+            <div className="uk-navbar-right">
                 <ul className="uk-navbar-nav">
                     {isLoggedIn ? ( <>
                             <li><Link>Chat</Link></li>

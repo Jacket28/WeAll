@@ -22,12 +22,7 @@ function App() {
                 <Route path="/conversation" component={Conversation} />
                 <Route path="/login" component={Login} />
             </Switch>
-            <footer className="App-footer">
-                <p>je suis le footer</p>
-            </footer>
-
         </BrowserRouter>
-
       </div>
   );
 }

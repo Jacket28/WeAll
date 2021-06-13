@@ -1,8 +1,23 @@
+html {
+  background-color: #414b71;
+  height: 100%;
+}
+
+body {
+  background-color: #414b71;
+  height: 100%;
+}
 
 .App {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   text-align: center;
   background-color: #414b71;
   align-items: center;
+  align-content: flex-end;
+  height: auto;
+
 }
 
 .App-logo {
@@ -13,18 +28,8 @@
 
 .App-header {
   background-color: #414b71;
-  align-items: center;
-  justify-content: center;
   color: white;
-
-}
-
-.App-footer{
-  display: flex;
-  align-items: center;
-  background-color: #414b71;
-  justify-content: center;
-  padding: 11px;
+  width: 100%;
 
 }
 
@@ -32,10 +37,11 @@
   background-color: #414b71;
 }
 
+.uk-navbar-container {
+  width: 100%;
+}
 
-
-
-.uk-navbar-left {
+.uk-navbar-right{
   background-color: #414b71;
   color: white;
   justify-content: flex-end;
