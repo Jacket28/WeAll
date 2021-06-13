@@ -44,7 +44,7 @@ export const Offers = () => {
                         }) : null }
                     </div>
                 </div>
-                <div className="offerDetails uk-width-3-4">
+                <div className="offerDetails">
                     {clickedOffer && entreprise ? (<Offer offer={clickedOffer} entreprise={entreprise}></Offer>) : null}
                 </div>
             </div>

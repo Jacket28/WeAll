@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import React from "react";
 import {NavigationBar} from "./pages/NavigationBar";
 import {Offers} from "./pages/Offers";
+import {Appliers} from "./pages/Appliers";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/" exact component={Home} />
                 <Route path="/companies" component={Companies} />
                 <Route path="/conversation" component={Conversation} />
+                <Route path="/appliers" component={Appliers} />
                 <Route path="/offers" component={Offers} />
                 <Route path="/login" component={Login} />
             </Switch>

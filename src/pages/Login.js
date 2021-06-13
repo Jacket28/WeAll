@@ -46,23 +46,23 @@ export default function Login() {
                 <div className="uk-card-header">
                 <h3 className="mb-5 text-center ">Login - WeAll</h3></div>
                 <div className="uk-card-body">
-                <h6 className="msg-info">Please login to your account</h6>
+                <h6 className="msg-info">Connectez-vous à votre compte WeAll !</h6>
 
                 <form onSubmit={handleSubmit}>
                   <input
                       required type="email" id="email" name="email" placeholder="Email" onChange={handleEmailChange}
                       value={email} className="form-control"/>
                   <input
-                      required type="password" id="psw" name="psw" placeholder="Password" onChange={handlePasswordChange}
+                      required type="password" id="psw" name="psw" placeholder="Mot de passe" onChange={handlePasswordChange}
                       value={password} className="form-control"/>
                   <div className="row justify-content-center">
-                    <button className="btn-block btn-color" type="submit">Validate</button>
+                    <button className="btn-block btn-color" type="submit">Valider</button>
                   </div>
                 </form>
                 </div>
                 <div className="uk-card-footer">
-                  <p>Don't have an account? Click
-                  <a href="https://app.weallbackend.ch/inscription"> here</a></p>
+                  <p>Vous n'avez pas de compte ? Cliquez
+                  <a href="https://app.weallbackend.ch/inscription"> ici</a></p>
                 </div>
               </div>
             </div>

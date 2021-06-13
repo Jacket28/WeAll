@@ -30,7 +30,8 @@ export const NavigationBar = () => {
                 <ul className="uk-navbar-nav">
                     {isLoggedIn ? ( <>
                             <li><Link>Chat</Link></li>
-                            <li><Link className="App-link" to={`/offers`}>Offers</Link></li>
+                            <li><Link className="App-link" to={`/offers`}>Offres</Link></li>
+                            <li><Link className="App-link" to={`/appliers`}>Postulant·e·s</Link></li>
                             <li><Link onClick={logout}>Logout</Link></li>
                             </>
 
