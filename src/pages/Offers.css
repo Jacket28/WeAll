@@ -5,7 +5,7 @@
 }
 
 .offerList{
- padding-left: 0px !important;
+    padding-left: 0px !important;
     background-color: white;
 }
 
@@ -14,10 +14,6 @@
 }
 
 
-.uk-grid {
-
-
-}
 
 .etiquettes {
     background-color: white;
@@ -63,7 +59,7 @@
     padding-left: 50px;
 }
 
-#offerDetails {
+.detailsSection {
     padding-left: 0px;
     padding-right: 50px;
 }

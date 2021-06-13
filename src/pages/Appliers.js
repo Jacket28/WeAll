@@ -7,8 +7,12 @@ import {Cv} from "../components/Cv";
 export const Appliers = () => {
     const [appliers, setAppliers] = useState([]);
     const [clickedApplier, setClickedApplier] = useState([]);
-    //const [softskills, setSoftskills] = useState([]);
-
+    const [softskills, setSoftskills] = useState([]);
+    const [experience, setExperience] = useState([]);
+    const [langue, setLangue] = useState([]);
+    const [sejour, setSejour] = useState([]);
+    const [competence, setCompetence] = useState([]);
+    const [formation, setFormation] = useState(null);
 
     React.useEffect(() => {
         Backend.getPostulants().then((p) => {
@@ -16,11 +20,49 @@ export const Appliers = () => {
         });
     }, []);
 
+
+    React.useEffect(() => {
+        Backend.getSoftskills(clickedApplier?.id_postulant).then((softskills) => {
+            setSoftskills(softskills);
+        });
+    }, [clickedApplier]);
+
+    React.useEffect(() => {
+        Backend.getCompetences(clickedApplier?.id_postulant).then((c) => {
+            setCompetence(c);
+        });
+    }, [clickedApplier]);
+
+    React.useEffect(() => {
+        Backend.getExperiences(clickedApplier?.id_postulant).then((e) => {
+            setExperience(e);
+        });
+    }, [clickedApplier]);
+
+    React.useEffect(() => {
+        Backend.getLangues(clickedApplier?.id_postulant).then((l) => {
+            setLangue(l);
+        });
+    }, [clickedApplier]);
+
+    React.useEffect(() => {
+        Backend.getSejours(clickedApplier.id_postulant).then((s) => {
+            setSejour(s);
+        });
+    }, [clickedApplier]);
+
+    React.useEffect(() => {
+        Backend.getFormations(clickedApplier.id_postulant).then((f) => {
+            setFormation(f);
+        });
+    }, [clickedApplier]);
+
+
     return(
         <>
-            <div className="container uk-grid">
-                <div className="offerList uk-width-1-4">
-                    <div className="uk-flex uk-flex-column uk-width-1-1" >
+            <div id="offerContent" className="uk-grid">
+                <div id="appliersList" className="uk-width-1-5">
+                    <div className="uk-flex-column" >
                         {appliers ?
                             appliers.map((applier) => {
                                 return (
@@ -28,7 +70,7 @@ export const Appliers = () => {
                                         setClickedApplier(applier);
                                     }}>
                                         <div className="uk-card uk-card-default uk-card-hover uk-card-body etiquettes">
-                                            <h3 className="uk-card-title">Profil {applier.id_postulant}</h3>
+                                            <h4 className="uk-card-title">Profil {applier.id_postulant}</h4>
                                             <p>{applier.sexe}</p>
                                         </div>
                                     </div>
@@ -36,8 +78,8 @@ export const Appliers = () => {
                             }) : null }
                     </div>
                 </div>
-                <div className="cv uk-width-3-4">
-                    {clickedApplier && appliers ? (<Cv applier={clickedApplier}></Cv>) : null}
+                <div id="cvDetails" className="detailsSection cv uk-width-4-5">
+                    {clickedApplier && appliers ? (<Cv applier={clickedApplier} softskills={softskills} experience={experience} langue={langue} sejour={sejour} competence={competence} formation={formation}></Cv>) : null}
                 </div>
             </div>
         </>

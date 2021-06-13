@@ -5,9 +5,9 @@ import {Offer} from "../components/Offer";
 
 
 export const Offers = () => {
-    const [offers, setOffers] = useState([]);
-    const [clickedOffer, setClickedOffer] = useState([]);
-    const [entreprise, setEntreprise] = useState([]);
+    const [offers, setOffers] = useState(null);
+    const [clickedOffer, setClickedOffer] = useState(null);
+    const [entreprise, setEntreprise] = useState(null);
 
     // récupère la liste des offres
     React.useEffect(() => {
@@ -45,11 +45,7 @@ export const Offers = () => {
                             }) : null }
                     </div>
                 </div>
-<<<<<<< HEAD
-                <div className="offerDetails">
-=======
-                <div id="offerDetails" className="uk-width-4-5">
->>>>>>> origin/flex
+                <div id="offerDetails" className="detailsSection uk-width-4-5">
                     {clickedOffer && entreprise ? (<Offer offer={clickedOffer} entreprise={entreprise}></Offer>) : null}
                 </div>
             </div>

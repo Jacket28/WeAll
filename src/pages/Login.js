@@ -40,7 +40,7 @@ export default function Login() {
 
   return (
       <div>
-        <div className="uk-container">
+        <div id="logContent" className="uk-container">
           <div className="uk-grid-margin uk-grid uk-grid-stack">
               <div className="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large"   >
                 <div className="uk-card-header">

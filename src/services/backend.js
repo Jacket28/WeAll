@@ -7,10 +7,11 @@ export const ENDPOINTS = {
   ENTERPRISE: `${process.env.REACT_APP_BACKEND_URL}/entreprise`,
   POSTULANT: `${process.env.REACT_APP_BACKEND_URL}/postulant`,
   SOFTSKILLS: `${process.env.REACT_APP_BACKEND_URL}/softskill/postulant`,
-  COMPETENCE: `${process.env.REACT_APP_BACKEND_URL}/softskill/postulant`,
+  COMPETENCE: `${process.env.REACT_APP_BACKEND_URL}/competence/postulant`,
   LANGUE: `${process.env.REACT_APP_BACKEND_URL}/langue/postulant`,
   SEJOUR: `${process.env.REACT_APP_BACKEND_URL}/langue/sejours`,
   EXPERIENCE: `${process.env.REACT_APP_BACKEND_URL}/experience/postulant`,
+  FORMATION: `${process.env.REACT_APP_BACKEND_URL}/formation/postulant`,
 };
 
 export const Backend = {
@@ -37,16 +38,19 @@ export const Backend = {
     return request(ENDPOINTS.SOFTSKILLS + "/" + id);
   },
   getCompetences: async (id) => {
-    return request(ENDPOINTS.POSTULANT + "/" + id);
+    return request(ENDPOINTS.COMPETENCE + "/" + id);
   },
   getLangues: async (id) => {
-    return request(ENDPOINTS.POSTULANT + "/" + id);
+    return request(ENDPOINTS.LANGUE + "/" + id);
   },
   getSejours: async (id) => {
-    return request(ENDPOINTS.POSTULANT + "/" + id);
+    return request(ENDPOINTS.SEJOUR + "/" + id);
   },
   getExperiences: async (id) => {
-    return request(ENDPOINTS.POSTULANT + "/" + id);
+    return request(ENDPOINTS.EXPERIENCE + "/" + id);
+  },
+  getFormations: async (id) => {
+    return request(ENDPOINTS.FORMATION + "/" + id);
   },
 
 };
