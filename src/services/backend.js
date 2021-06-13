@@ -22,7 +22,7 @@ export const Backend = {
   },
 
   applicant: async function () {
-    return request(ENDPOINTS.USER + localStorage.getItem("applicantId"),{
+    return request(ENDPOINTS.USER + localStorage.getItem("loginId"),{
       method:"GET"
     });
   },
@@ -34,25 +34,25 @@ export const Backend = {
   },
 
   deleteConversation: async function(id){
-    return request(ENDPOINTS.CONVERSATION + localStorage.getItem("applicantId") + "/" + id,{
+    return request(ENDPOINTS.CONVERSATION + localStorage.getItem("loginId") + "/" + id,{
       method:"DELETE"
     });
   },
 
   conversation: async function(id){
-    return request(ENDPOINTS.CONVERSATION + localStorage.getItem("applicantId") + "/" + id,{
+    return request(ENDPOINTS.CONVERSATION + localStorage.getItem("loginId") + "/" + id,{
       method:"GET"
     });
   },
 
   message: async function(id){
-    return request(ENDPOINTS.MESSAGES + localStorage.getItem("applicantId") + "/" + id,{
+    return request(ENDPOINTS.MESSAGES + localStorage.getItem("loginId") + "/" + id,{
         method:"GET"
       });
   },
 
   setMessage: async function(id, message){
-    return request(ENDPOINTS.MESSAGES + localStorage.getItem("applicantId") + "/" + id,{
+    return request(ENDPOINTS.MESSAGES + localStorage.getItem("loginId") + "/" + id,{
       method:"POST",
       data: {message}
     });

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Backend } from "../services/backend";
 import { useHistory } from "react-router-dom";
 
-export default function Conversations() {
+export default function ConversationsWithCompanies() {
     // Hold the list of companies in the component state
     const [companies, setCompanies] = useState([]);
     const history = useHistory();
@@ -21,18 +21,18 @@ export default function Conversations() {
         fetchCompanies();
     }, []);
 
-    function startChat(id){
-        localStorage.setItem("entrepriseId", id);
-        history.push("/conversation");
-    }
-
-
     return (
         <div>
             <h1>List of Companies to chat with</h1>
             <ul>
                 {companies.map((c) => (
-                    <div key={c.id_entreprise}>{c.nom}</div>
+
+                    <div key={c.id_user} onClick={() => {
+                        localStorage.setItem("idRecipient", c.id_user);
+                        history.push("conversation");
+                    }}>{c.id_user}, {c.nom}
+                    </div>
+
                 ))}
             </ul>
         </div>

@@ -2,20 +2,17 @@ import React, {Component} from 'react';
 import './Conversation.css';
 import Messages from "./Messages";
 import Input from "../components/Input";
+import Delete from "../components/Delete";
 import {Backend} from "../services/backend";
 
 class App extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-
         return (
             <div className="Conversation">
                 <div className="Conversation-header">
                     <h1>My Chat App</h1>
+                    <Delete/>
                 </div>
                 <Messages
                 />
@@ -25,9 +22,8 @@ class App extends Component {
             </div>
         );
     }
-
     onSendMessage = (message) => {
-        Backend.setMessage(2, message);
+        Backend.setMessage(localStorage.getItem("idRecipient"), message);
     }
 
 }

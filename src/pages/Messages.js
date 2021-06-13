@@ -18,7 +18,7 @@ export default function Messages() {
 
   async function fetchMessages() {
     try {
-      let messages = await Backend.message(2);
+      let messages = await Backend.message(localStorage.getItem("idRecipient"));
       setMessages(messages);
     } catch (e) {
       console.error(e);
@@ -26,7 +26,7 @@ export default function Messages() {
   }
 
   function isFromMe(m){
-    const messageFromMe = m.id_user1 == localStorage.getItem("applicantId")
+    const messageFromMe = m.id_user1 == localStorage.getItem("loginId")
     const className = messageFromMe ?
         "Messages-message currentMember" : "Messages-message";
 

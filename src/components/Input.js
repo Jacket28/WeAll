@@ -1,9 +1,6 @@
 import {Component} from "react";
 import React from "react";
 
-import styles from '../pages/Conversation.css';
-
-
 class Input extends Component {
   state = {
     text: ""

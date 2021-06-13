@@ -5,7 +5,9 @@ import Companies from "./pages/Companies";
 import Applicant from "./pages/Applicant";
 import Login from "./pages/Login";
 import React from "react";
-import Conversations from "./pages/Conversations";
+import ConversationsWithCompanies from "./pages/ConversationsWithCompanies";
+import ConversationsWithApplicants from "./pages/ConversationsWithApplicants"
+
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
             <Route path="/" exact component={Login} />
             <Route path="/companies" component={Companies} />
             <Route path="/applicants" component={Applicant} />
-            <Route path="/conversations" component={Conversations} />
+            <Route path="/conversationsWithCompanies" component={ConversationsWithCompanies} />
+            <Route path="/conversationsWithApplicants" component={ConversationsWithApplicants} />
             <Route path="/conversation" component={Conversation} />
             <Route path="/login" component={Login} />
           </Switch>

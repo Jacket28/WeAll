@@ -28,10 +28,16 @@ export default function Login() {
 
       // Save the token to localStorage & redirect to the home page
       localStorage.setItem(TOKEN_STORAGE_KEY, loginData.token);
-      localStorage.setItem("applicantId", loginData.userId);
+      localStorage.setItem("loginId", loginData.userId);
+      localStorage.setItem("userType", loginData.isEnterprise);
 
       // Redirect to the home page
-      history.push("/conversations");
+
+      loginData.isEnterprise
+          ? history.push("/conversationsWithApplicants")
+          : history.push("/conversationsWithCompanies");
+
+
     } catch (e) {
       console.error(e);
     }
