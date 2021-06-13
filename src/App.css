@@ -8,6 +8,13 @@ body {
   height: 100%;
 }
 
+h2 {
+  color: white;
+  font-size: 25px;
+  margin: auto;
+  padding-left: 30px;
+}
+
 .App {
   position: relative;
   display: flex;
@@ -38,10 +45,17 @@ body {
 }
 
 .uk-navbar-container {
+  display: flex;
   width: 100%;
+  background: #414b71 !important;
 }
 
 .uk-navbar-right{
+  background-color: #414b71;
+  color: white;
+
+}
+.uk-navbar-left{
   background-color: #414b71;
   color: white;
   justify-content: flex-end;

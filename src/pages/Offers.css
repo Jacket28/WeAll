@@ -1,0 +1,34 @@
+.container {
+    width:90%;
+
+
+}
+
+
+.offerList{
+ padding-left: 0px !important;
+}
+
+.offerDetails{
+
+
+}
+
+.containerTest{
+    display: flex;
+}
+
+.uk-grid {
+    color : blue;
+
+}
+
+.etiquettes {
+    background-color: white;
+    margin-bottom: 40px;
+}
+
+.etiquettes:hover {
+    background-color: lightgrey !important;
+    margin-bottom: 40px;
+}
