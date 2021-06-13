@@ -16,13 +16,12 @@ h2 {
 }
 
 .App {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+ /* position: relative;*/
+  /*flex-direction: column;*/
+  /*text-align: center;*/
   background-color: #414b71;
-  align-items: center;
-  align-content: flex-end;
+ /* align-items: center;*/
+ /* align-content: flex-end;*/
   height: auto;
 
 }

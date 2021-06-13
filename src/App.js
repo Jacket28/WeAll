@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import React from "react";
 import {NavigationBar} from "./pages/NavigationBar";
 import {Offers} from "./pages/Offers";
+import {Offers2} from "./pages/Offers2";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
                 <Route path="/" exact component={Home} />
                 <Route path="/companies" component={Companies} />
                 <Route path="/conversation" component={Conversation} />
-                <Route path="/offers" component={Offers} />
+                <Route path="/offers" component={Offers2} />
                 <Route path="/login" component={Login} />
             </Switch>
         </BrowserRouter>
