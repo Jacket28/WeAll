@@ -1,9 +1,11 @@
 import {Backend} from "../services/backend";
 import "../pages/Offers.css";
 import React, {useState} from "react";
+import {useHistory} from "react-router-dom";
 
 export const Cv = (props) => {
     const {applier, softskills, experience, langue, sejour, competence, formation} = props;
+    const history = useHistory();
 
     return (
         <>
@@ -15,6 +17,10 @@ export const Cv = (props) => {
                                 <div className="uk-width-expand">
                                     <h3 className="uk-card-title uk-margin-remove-bottom">Profil du
                                         postulant·e {applier.id_postulant}</h3>
+                                    <button className="btn-block btn-color" type="submit" onClick={() => {
+                                        localStorage.setItem("idRecipient", applier.id_user);
+                                        history.push("/conversation");
+                                    }}>Conversation</button>
                                 </div>
                             </div>
                         </div>

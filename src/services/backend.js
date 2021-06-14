@@ -12,6 +12,9 @@ export const ENDPOINTS = {
   SEJOUR: `${process.env.REACT_APP_BACKEND_URL}/langue/sejours`,
   EXPERIENCE: `${process.env.REACT_APP_BACKEND_URL}/experience/postulant`,
   FORMATION: `${process.env.REACT_APP_BACKEND_URL}/formation/postulant`,
+  APPLICANTS: `${process.env.REACT_APP_BACKEND_URL}/postulant`,
+  CONVERSATION: `${process.env.REACT_APP_BACKEND_URL}/chat/conversation/`,
+  MESSAGES :  `${process.env.REACT_APP_BACKEND_URL}/chat/message/`
 };
 
 export const Backend = {
@@ -52,5 +55,27 @@ export const Backend = {
   getFormations: async (id) => {
     return request(ENDPOINTS.FORMATION + "/" + id);
   },
+
+  applicants: async function () {
+    return request(ENDPOINTS.APPLICANTS);
+  },
+
+  deleteConversation: async function(id){
+    return request(ENDPOINTS.CONVERSATION + localStorage.getItem("loginId") + "/" + id,{
+      method:"DELETE"
+    });
+  },
+
+  message: async function(id){
+    return request(ENDPOINTS.MESSAGES + localStorage.getItem("loginId") + "/" + id);
+  },
+
+  setMessage: async function(id, message){
+    return request(ENDPOINTS.MESSAGES + localStorage.getItem("loginId") + "/" + id,{
+      method:"POST",
+      data: {message}
+    });
+  },
+
 
 };

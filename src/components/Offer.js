@@ -1,8 +1,11 @@
 // contient la colonne offre et la colonne entreprise
 import "../pages/Offers.css";
+import "../pages/Login.css";
+import {useHistory} from "react-router-dom";
 
 export const Offer = (props) => {
     const {offer, entreprise} = props;
+    const history = useHistory();
 
     return (
         <>
@@ -17,6 +20,12 @@ export const Offer = (props) => {
                                 <div className="uk-width-expand">
                                     <h4 className="uk-card-title uk-margin-remove-bottom">{offer.nom} ({offer.taux})</h4>
                                     <p className="uk-text-meta uk-margin-remove-top">{offer.contrat}</p>
+                                    <button className="btn-block btn-color" type="submit" onClick={() => {
+                                        localStorage.setItem("idRecipient", entreprise.id_user);
+                                        console.log(entreprise.id_user);
+                                        console.log(localStorage.getItem("loginId"));
+                                        history.push("/conversation");
+                                    }}>Conversation</button>
                                 </div>
                             </div>
                         </div>

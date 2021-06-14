@@ -30,6 +30,9 @@ export default function Login() {
 
       // Save the token to localStorage & redirect to the home page
       localStorage.setItem(TOKEN_STORAGE_KEY, loginData.token);
+      localStorage.setItem("loginId", loginData.userId);
+      console.log(loginData.userId);
+      localStorage.setItem("userType", loginData.isEnterprise);
       dispatch({type: "LOG_IN"});
       // Redirect to the home page
       history.push("/");
