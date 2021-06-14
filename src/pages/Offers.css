@@ -1,0 +1,65 @@
+.container {
+    width:100%;
+
+
+}
+
+.offerList{
+    padding-left: 0px !important;
+    background-color: white;
+}
+
+.offerDetails{
+    background-color: red;
+}
+
+
+
+.etiquettes {
+    background-color: white;
+    margin-bottom: 40px;
+    padding: 30px;
+}
+
+.etiquettes:hover {
+    background-color: lightgrey !important;
+}
+
+.etiquettes h4 {
+    margin-bottom: 0px;
+}
+
+.etiquettes p {
+    margin-top: 0px;
+}
+
+
+.rowContainer {
+    display: flex;
+}
+
+
+.information_block {
+    margin-bottom: 50px;
+}
+
+.information_block p {
+    margin: 0px;
+}
+
+.item_label {
+    font-weight: bold;
+}
+
+#offerContent {
+    margin-top: 50px;
+}
+
+#offersList {
+    padding-left: 50px;
+}
+
+.detailsSection {
+    padding-left: 0px;
+    padding-right: 50px;
+}

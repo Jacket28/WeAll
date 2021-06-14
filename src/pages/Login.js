@@ -4,8 +4,10 @@ import { TOKEN_STORAGE_KEY } from "../utils/request";
 import { useHistory } from "react-router-dom";
 
 import './Login.css';
+import {useIsUserLoggedInContext} from "../services/login-service";
 
 export default function Login() {
+  const {state, dispatch} = useIsUserLoggedInContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,9 +30,12 @@ export default function Login() {
 
       // Save the token to localStorage & redirect to the home page
       localStorage.setItem(TOKEN_STORAGE_KEY, loginData.token);
-
+      localStorage.setItem("loginId", loginData.userId);
+      console.log(loginData.userId);
+      localStorage.setItem("userType", loginData.isEnterprise);
+      dispatch({type: "LOG_IN"});
       // Redirect to the home page
-      history.push("/conversation");
+      history.push("/");
     } catch (e) {
       console.error(e);
     }
@@ -38,50 +43,34 @@ export default function Login() {
 
   return (
       <div>
-        <div className="leftBox">
-          <div className="card card1">
-            <div className="row justify-content-center my-auto">
-              <div className="col-md-8 col-10 my-5">
-                <div className="row justify-content-center px-3 mb-3">
-                </div>
-                <h3 className="mb-5 text-center heading">WeAllChat</h3>
-                <h6 className="msg-info">Please login to your account</h6>
-                <form onSubmit={handleSubmit}>
-                <div>Username<input
-                    required type="email" id="email" name="email" placeholder="Email" onChange={handleEmailChange}
-                    value={email} className="form-control"/>
-                </div>
-                <div>Password <input
-                    required type="password" id="psw" name="psw" placeholder="Password" onChange={handlePasswordChange}
-                    value={password} className="form-control"/>
-                </div>
+        <div id="logContent" className="uk-container">
+          <div className="uk-grid-margin uk-grid uk-grid-stack">
+              <div className="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large"   >
+                <div className="uk-card-header">
+                <h3 className="mb-5 text-center ">Login - WeAll</h3></div>
+                <div className="uk-card-body">
+                <h6 className="msg-info">Connectez-vous à votre compte WeAll !</h6>
 
-                <div className="row justify-content-center my-3 px-3">
-                  <button className="btn-block btn-color" type="submit">Let's chat !</button>
-                </div>
+                <form onSubmit={handleSubmit}>
+                  <input
+                      required type="email" id="email" name="email" placeholder="Email" onChange={handleEmailChange}
+                      value={email} className="form-control"/>
+                  <input
+                      required type="password" id="psw" name="psw" placeholder="Mot de passe" onChange={handlePasswordChange}
+                      value={password} className="form-control"/>
+                  <div className="row justify-content-center">
+                    <button className="btn-block btn-color" type="submit">Valider</button>
+                  </div>
                 </form>
+                </div>
+                <div className="uk-card-footer">
+                  <p>Vous n'avez pas de compte ? Cliquez
+                  <a href="https://app.weallbackend.ch/inscription"> ici</a></p>
+                </div>
               </div>
             </div>
-            <div className="bottom text-center mb-5">
-              <p>Don't have an account?
-                <a href="https://app.weallbackend.ch/inscription" className="btn-white">Create new</a>
-              </p>
-            </div>
-          </div>
         </div>
-
-        <div className="rightBox">
-          <div className="card2">
-            <div className="my-auto mx-md-5 px-md-5 right">
-              <h3 className="text-white">What is WeAllChat ?</h3> <small className="text-white">WeAllChat offers you
-              the chance to increase your professional network by chatting with one or more company. To do so, you
-              must first of all get matched with a specific company and then you will be able to break the ice with
-              some already pre-existent answer.
-            </small>
-            </div>
-          </div>
-        </div>
-
       </div>
+
 );
 }

@@ -1,40 +1,37 @@
 import {Component} from "react";
 import React from "react";
 
-import styles from '../pages/Conversation.css';
-
-
 class Input extends Component {
-  state = {
-    text: ""
-  }
+    state = {
+        text: ""
+    }
 
-  onChange(e) {
-    this.setState({text: e.target.value});
-  }
+    onChange(e) {
+        this.setState({text: e.target.value});
+    }
 
-  onSubmit(e) {
-    e.preventDefault();
-    this.setState({text: ""});
-    this.props.onSendMessage(this.state.text);
-  }
+    onSubmit(e) {
+        e.preventDefault();
+        this.setState({text: ""});
+        this.props.onSendMessage(this.state.text);
+    }
 
-  render() {
-    return (
-      <div className="Input">
-        <form onSubmit={e => this.onSubmit(e)}>
-          <input
-            onChange={e => this.onChange(e)}
-            value={this.state.text}
-            type="text"
-            placeholder="Enter your message and press ENTER"
-            autofocus="true"
-          />
-          <button style={{fontSize: 50,backgroundColor: "orangered", color: "white",border: "none", borderRadius: 8, marginLeft: 10, padding: 5|10 }}>Send</button>
-        </form>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="Input">
+                <form onSubmit={e => this.onSubmit(e)}>
+                    <input
+                        onChange={e => this.onChange(e)}
+                        value={this.state.text}
+                        type="text"
+                        placeholder="Enter your message and press ENTER"
+                        autoFocus={true}
+                    />
+                    <button style={{fontSize: 50,backgroundColor: "orangered", color: "white",border: "none", borderRadius: 8, marginLeft: 10, padding: 5|10 }}>Send</button>
+                </form>
+            </div>
+        );
+    }
 }
 
 export default Input;
