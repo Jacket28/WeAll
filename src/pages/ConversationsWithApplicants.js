@@ -26,12 +26,14 @@ import {useHistory} from "react-router-dom";
      return (
          <div>
              <h1>List of Applicants</h1>
+             <ul>
                  {applicant.map((a) => (
                      <div key={a.id_user} onClick={() => {
                          localStorage.setItem("idRecipient", a.id_user);
-                         history.push("conversation");
+                         history.push("/conversation");
                      }}>{a.id_user}, {a.nom}</div>
                  ))}
+             </ul>
          </div>
      );
   }

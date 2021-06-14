@@ -9,7 +9,7 @@ export default function Messages() {
   useEffect(() => {
     const interval = setInterval(() => {
       fetchMessages();
-    }, 1000);
+    }, 1500);
     return () => clearInterval(interval);
 
 

@@ -2,7 +2,7 @@ import {Component} from "react";
 import React from "react";
 import {Backend} from "../services/backend";
 
-class Input extends Component {
+class Delete extends Component {
     state = {
         text: ""
     }
@@ -25,4 +25,4 @@ class Input extends Component {
     }
 }
 
-export default Input;
+export default Delete;

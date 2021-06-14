@@ -1,8 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Conversation from "./pages/Conversation";
-import Companies from "./pages/Companies";
-import Applicant from "./pages/Applicant";
 import Login from "./pages/Login";
 import React from "react";
 import ConversationsWithCompanies from "./pages/ConversationsWithCompanies";
@@ -18,8 +16,6 @@ function App() {
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={Login} />
-            <Route path="/companies" component={Companies} />
-            <Route path="/applicants" component={Applicant} />
             <Route path="/conversationsWithCompanies" component={ConversationsWithCompanies} />
             <Route path="/conversationsWithApplicants" component={ConversationsWithApplicants} />
             <Route path="/conversation" component={Conversation} />

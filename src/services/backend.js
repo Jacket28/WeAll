@@ -3,8 +3,7 @@ import request from "../utils/request";
 export const ENDPOINTS = {
   LOGIN: `${process.env.REACT_APP_BACKEND_URL}/user/login`,
   COMPANIES: `${process.env.REACT_APP_BACKEND_URL}/entreprise`,
-  USER: `${process.env.REACT_APP_BACKEND_URL}/postulant/user/`,
-  POSTULANTS: `${process.env.REACT_APP_BACKEND_URL}/postulant`,
+  APPLICANTS: `${process.env.REACT_APP_BACKEND_URL}/postulant`,
   CONVERSATION: `${process.env.REACT_APP_BACKEND_URL}/chat/conversation/`,
   MESSAGES :  `${process.env.REACT_APP_BACKEND_URL}/chat/message/`
 };
@@ -21,16 +20,8 @@ export const Backend = {
     return request(ENDPOINTS.COMPANIES);
   },
 
-  applicant: async function () {
-    return request(ENDPOINTS.USER + localStorage.getItem("loginId"),{
-      method:"GET"
-    });
-  },
-
   applicants: async function () {
-    return request(ENDPOINTS.POSTULANTS,{
-      method:"GET"
-    });
+    return request(ENDPOINTS.APPLICANTS);
   },
 
   deleteConversation: async function(id){
@@ -39,16 +30,8 @@ export const Backend = {
     });
   },
 
-  conversation: async function(id){
-    return request(ENDPOINTS.CONVERSATION + localStorage.getItem("loginId") + "/" + id,{
-      method:"GET"
-    });
-  },
-
   message: async function(id){
-    return request(ENDPOINTS.MESSAGES + localStorage.getItem("loginId") + "/" + id,{
-        method:"GET"
-      });
+    return request(ENDPOINTS.MESSAGES + localStorage.getItem("loginId") + "/" + id);
   },
 
   setMessage: async function(id, message){

@@ -17,22 +17,19 @@ export default function ConversationsWithCompanies() {
                 console.error(e);
             }
         }
-
         fetchCompanies();
-    }, []);
+    }, [companies]);
 
     return (
         <div>
             <h1>List of Companies to chat with</h1>
             <ul>
                 {companies.map((c) => (
-
                     <div key={c.id_user} onClick={() => {
                         localStorage.setItem("idRecipient", c.id_user);
-                        history.push("conversation");
+                        history.push("/conversation");
                     }}>{c.id_user}, {c.nom}
                     </div>
-
                 ))}
             </ul>
         </div>
