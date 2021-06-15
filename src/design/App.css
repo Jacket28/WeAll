@@ -1,10 +1,17 @@
+:root {
+  --dark_background: #2b2e42;
+  --light_background: #eeedff;
+  --logo_color_weall: #c6dffd;
+}
+
+
 html {
-  background-color: #414b71;
+  background-color: var(--dark_background);
   height: 100%;
 }
 
 body {
-  background-color: #414b71;
+  background-color: var(--dark_background);
   height: 100%;
 }
 
@@ -16,14 +23,8 @@ h2 {
 }
 
 .App {
- /* position: relative;*/
-  /*flex-direction: column;*/
-
-  background-color: #414b71;
-
- /* align-content: flex-end;*/
+  background-color: var(--dark_background);
   height: auto;
-
 }
 
 .App-logo {
@@ -31,31 +32,36 @@ h2 {
   pointer-events: none;
 }
 
+#logoNav{
+  margin-left: 15px;
+
+}
+
 
 .App-header {
-  background-color: #414b71;
+  background-color: var(--dark_background);
   color: white;
   width: 100%;
 
 }
 
 .App-link {
-  background-color: #414b71;
+  background-color: var(--dark_background);
 }
 
 .uk-navbar-container {
   display: flex;
   width: 100%;
-  background: #414b71 !important;
+  background-color: var(--dark_background) !important;
 }
 
 .uk-navbar-right{
-  background-color: #414b71;
+  background-color: var(--dark_background);
   color: white;
 
 }
 .uk-navbar-left{
-  background-color: #414b71;
+  background-color: var(--dark_background);
   color: white;
   justify-content: flex-end;
 }

@@ -1,5 +1,6 @@
 import {isTokenStored} from "../utils/utils";
 import React from "react";
+import { ENTREPRISE_KEY } from "../utils/request";
 
 // création d'un contexte pour gérer le statut de login dans toute l'app
 // + simple que les props dans ce cas
@@ -30,9 +31,14 @@ function logReducer(state, action) {
 
 // faire passer la valeur dans notre app
 export function LoginProvider({ children }) {
-    const [state, dispatch] = React.useReducer(logReducer, {
+
+    const entreprise = localStorage.getItem(ENTREPRISE_KEY)
+    const firstState = {
         isLoggedIn: isTokenStored(),
-    });
+        isEntreprise: entreprise == 'false' ? false: true
+    }
+
+    const [state, dispatch] = React.useReducer(logReducer, firstState);
     const value = { state, dispatch };
     return (
         <LoginContext.Provider value={value}>{children}</LoginContext.Provider>

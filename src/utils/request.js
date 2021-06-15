@@ -1,4 +1,5 @@
 export const TOKEN_STORAGE_KEY = "token";
+export const ENTREPRISE_KEY = "isEntreprise";
 
 export default async function request(
   url,

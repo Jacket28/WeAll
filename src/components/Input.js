@@ -1,6 +1,6 @@
 import {Component} from "react";
 import React from "react";
-
+import '../design/Conversation.css';
 class Input extends Component {
     state = {
         text: ""
@@ -19,24 +19,15 @@ class Input extends Component {
     render() {
         return (
             <div className="Input">
-                <form onSubmit={e => this.onSubmit(e)}>
-                    <input
+                <form id="formInput" onSubmit={e => this.onSubmit(e)}>
+                    <input id="inputText"
                         onChange={e => this.onChange(e)}
                         value={this.state.text}
                         type="text"
-                        placeholder="Enter your message and press ENTER"
+                        placeholder="Ecrivez votre message ici, et appuyez sur ENTER"
                         autoFocus={true}
                     />
-                    <button style={{
-                        fontSize: 50,
-                        backgroundColor: "orangered",
-                        color: "white",
-                        border: "none",
-                        borderRadius: 8,
-                        marginLeft: 10,
-                        padding: 5 | 10
-                    }}>Send
-                    </button>
+                    <button className="btn-color" id="sendBtn">Envoyer</button>
                 </form>
             </div>
         );

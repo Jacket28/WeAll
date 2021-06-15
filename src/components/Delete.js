@@ -1,6 +1,7 @@
 import {Component} from "react";
 import React from "react";
 import {Backend} from "../services/backend";
+import '../design/Conversation.css';
 
 class Delete extends Component {
     state = {
@@ -18,7 +19,7 @@ class Delete extends Component {
         return (
             <div className="Input">
                 <form onSubmit={e => this.onSubmit(e)}>
-                    <button style={{fontSize: 15,backgroundColor: "grey", color: "white",border: "none", borderRadius: 8, marginLeft: 10, padding: 5|10, alignContent:"right" }}>Delete the conversation</button>
+                    <button className="btn-color" id="delete">Supprimer cette conversation</button>
                 </form>
             </div>
         );

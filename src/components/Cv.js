@@ -17,13 +17,13 @@ export const Cv = (props) => {
                         <div className="uk-card-header">
                             <div className="uk-grid-small uk-flex-middle" uk-grid>
                                 <div className="uk-width-expand">
-                                    <h3 className="uk-card-title uk-margin-remove-bottom">Profil du
-                                        postulant·e {applier.id_postulant}</h3>
-                                    <button className="btn-block btn-color" type="submit" onClick={() => {
-                                        localStorage.setItem("idRecipient", applier.id_user);
-                                        history.push("/conversation");
-                                    }}>Conversation
-                                    </button>
+                                        <h3 className="uk-card-title uk-margin-remove-bottom">Profil du
+                                            postulant·e {applier.id_postulant}</h3>
+                                        <button className="btn-block btn-color" type="submit" onClick={() => {
+                                            localStorage.setItem("idRecipient", applier.id_user);
+                                            history.push("/conversation");
+                                        }}>Conversation
+                                        </button>
                                 </div>
                             </div>
                         </div>

@@ -32,10 +32,7 @@ export default function Messages() {
         return (
             <>
                 <li className={className}>
-              <span
-                  className="avatar"
-                  style={{backgroundColor: "black"}}
-              />
+                 <span className="avatar"/>
                     <div className="Message-content">
                         <div className="text">{m.message}</div>
                     </div>

@@ -59,7 +59,7 @@ button:focus {
 
 .btn-color {
     border-radius: 7px;
-    background-color: #414b71;
+    background-color: var(--dark_background);
     color: white;
     padding: 10px;
     cursor: pointer;
@@ -75,12 +75,12 @@ button:focus {
 
 .btn-white {
     border-radius: 50px;
-    color: #414b71;
+    background-color: var(--dark_background);
     background-color: #fff;
     padding: 12px 70px;
     font-size: 20px;
     cursor: pointer;
-    border: 2px solid #414b71 ;
+    border: 2px solid var(--dark_background) ;
 
 }
 

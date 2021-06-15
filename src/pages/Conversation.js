@@ -10,16 +10,27 @@ class App extends Component {
     render() {
         return (
             <div className="Conversation">
-                <div className="Conversation-header">
-                    <h1>My Chat App</h1>
-                    <Delete/>
+                <div className="uk-card uk-card-default uk-width-1-1@m">
+                    <div className="uk-card-header">
+                        <div className="uk-grid-small " uk-grid>
+                            <div className="uk-width-expand">
+                                <h3 className="uk-card-title uk-margin-remove-bottom">Conversation</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="uk-card-body uk-card-body uk-padding-small" id="chat">
+                        <Messages/>
+
+                    </div>
+                    <div className="uk-card-footer">
+                        <div className="justify-content-center">
+                            <Input onSendMessage={this.onSendMessage}/>
+                                <Delete/>
+                        </div>
+                    </div>
                 </div>
-                <Messages
-                />
-                <Input
-                    onSendMessage={this.onSendMessage}
-                />
             </div>
+
         );
     }
 
