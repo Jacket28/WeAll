@@ -83,7 +83,7 @@ export const Cv = (props) => {
                                         <div>
                                             {experience != null &&
                                             <div className="uk-grid ">
-                                                <div className="item_label uk-width-1-4">Année d'expérience</div>
+                                                <div className="item_label uk-width-1-4">Année d'expérience e</div>
                                                 <div className="item_label uk-width-1-4">Poste occupé</div>
                                                 <div className="item_label uk-width-1-4">Secteur d'activité</div>
                                                 <div className="item_label uk-width-1-4">Entreprise</div>
