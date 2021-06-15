@@ -36,7 +36,7 @@ export default function Login() {
             localStorage.setItem(IS_ENTREPRISE, loginData.isEnterprise);
 
             dispatch({type: "LOG_IN", isEntreprise: loginData.isEnterprise}); // attribution du state au contexte
-            console.log();
+
             // Redirect to the home page
             history.push("/");
         } catch (e) {
