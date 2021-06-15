@@ -77,5 +77,10 @@ export const Backend = {
         });
     },
 
+    getConversation: async function () {
+        return request(ENDPOINTS.CONVERSATION + localStorage.getItem("loginId"));
+    },
+
+
 
 };

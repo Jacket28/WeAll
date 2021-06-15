@@ -13,6 +13,7 @@ class Delete extends Component {
         e.preventDefault();
         this.setState({text: ""});
         Backend.deleteConversation(localStorage.getItem("idRecipient"));
+        localStorage.setItem("idRecipient", null);
     }
 
     render() {

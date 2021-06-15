@@ -4,12 +4,14 @@ import Messages from "./Messages";
 import Input from "../components/Input";
 import Delete from "../components/Delete";
 import {Backend} from "../services/backend";
+import History from "./History";
 
 class App extends Component {
 
     render() {
         return (
             <div className="Conversation">
+                <History/>
                 <div className="uk-card uk-card-default uk-width-1-1@m">
                     <div className="uk-card-header">
                         <div className="uk-grid-small " uk-grid>
