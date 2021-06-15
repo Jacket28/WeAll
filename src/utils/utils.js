@@ -1,4 +1,4 @@
-import { TOKEN_STORAGE_KEY } from "./request"; // token de l'API
+import {TOKEN_STORAGE_KEY} from "./request"; // token de l'API
 
 export const isTokenStored = () => {
     return (
@@ -6,6 +6,8 @@ export const isTokenStored = () => {
         localStorage.getItem(TOKEN_STORAGE_KEY) !== null && localStorage.getItem(TOKEN_STORAGE_KEY) !== undefined
     );
 };
+
+
 
 // pour nettoyer notre token lors de la déconnexion
 export const cleanTokenStored = () => {
