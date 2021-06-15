@@ -27,7 +27,16 @@ class Input extends Component {
                         placeholder="Enter your message and press ENTER"
                         autoFocus={true}
                     />
-                    <button style={{fontSize: 50,backgroundColor: "orangered", color: "white",border: "none", borderRadius: 8, marginLeft: 10, padding: 5|10 }}>Send</button>
+                    <button style={{
+                        fontSize: 50,
+                        backgroundColor: "orangered",
+                        color: "white",
+                        border: "none",
+                        borderRadius: 8,
+                        marginLeft: 10,
+                        padding: 5 | 10
+                    }}>Send
+                    </button>
                 </form>
             </div>
         );

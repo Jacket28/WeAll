@@ -3,17 +3,18 @@ import {Backend} from "../services/backend";
 import {Offer} from "../components/Offer";
 import {Cv} from "../components/Cv";
 
-
+/* Liste des postulants */
 export const Appliers = () => {
     const [appliers, setAppliers] = useState([]);
     const [clickedApplier, setClickedApplier] = useState([]);
     const [softskills, setSoftskills] = useState([]);
     const [experience, setExperience] = useState([]);
     const [langue, setLangue] = useState([]);
-    const [sejour, setSejour] = useState([]);
     const [competence, setCompetence] = useState([]);
     const [formation, setFormation] = useState(null);
 
+
+    /* Récupération des données via l'API (backend) */
     React.useEffect(() => {
         Backend.getPostulants().then((p) => {
             setAppliers(p);
@@ -46,18 +47,12 @@ export const Appliers = () => {
     }, [clickedApplier]);
 
     React.useEffect(() => {
-        Backend.getSejours(clickedApplier.id_postulant).then((s) => {
-            setSejour(s);
-        });
-    }, [clickedApplier]);
-
-    React.useEffect(() => {
         Backend.getFormations(clickedApplier.id_postulant).then((f) => {
             setFormation(f);
         });
     }, [clickedApplier]);
 
-
+    /* Affichage de la liste */
     return(
         <>
             <div id="offerContent" className="uk-grid">
@@ -79,7 +74,7 @@ export const Appliers = () => {
                     </div>
                 </div>
                 <div id="cvDetails" className="detailsSection cv uk-width-4-5">
-                    {clickedApplier && appliers ? (<Cv applier={clickedApplier} softskills={softskills} experience={experience} langue={langue} sejour={sejour} competence={competence} formation={formation}></Cv>) : null}
+                    {clickedApplier && appliers ? (<Cv applier={clickedApplier} softskills={softskills} experience={experience} langue={langue} competence={competence} formation={formation}></Cv>) : null}
                 </div>
             </div>
         </>

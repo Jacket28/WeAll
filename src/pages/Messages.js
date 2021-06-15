@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Backend } from "../services/backend";
+import React, {useEffect, useState} from "react";
+import {Backend} from "../services/backend";
 
 export default function Messages() {
     // Hold the list of companies in the component state
@@ -13,7 +13,6 @@ export default function Messages() {
         return () => clearInterval(interval);
 
 
-
     }, []);
 
     async function fetchMessages() {
@@ -25,7 +24,7 @@ export default function Messages() {
         }
     }
 
-    function isFromMe(m){
+    function isFromMe(m) {
         const messageFromMe = m.id_user1 == localStorage.getItem("loginId")
         const className = messageFromMe ?
             "Messages-message currentMember" : "Messages-message";

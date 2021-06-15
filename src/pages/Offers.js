@@ -1,9 +1,9 @@
-import "./Offers.css";
+import "../design/Offers.css";
 import {Backend} from "../services/backend";
 import React, {useState} from "react";
 import {Offer} from "../components/Offer";
 
-
+/* Liste des offres */
 export const Offers = () => {
     const [offers, setOffers] = useState(null);
     const [clickedOffer, setClickedOffer] = useState(null);
@@ -23,7 +23,7 @@ export const Offers = () => {
         });
     }, [clickedOffer]);
 
-
+    /* Affichage de la liste des offres */
     return (
         <>
 
@@ -42,7 +42,7 @@ export const Offers = () => {
                                         </div>
                                     </div>
                                 );
-                            }) : null }
+                            }) : null}
                     </div>
                 </div>
                 <div id="offerDetails" className="detailsSection uk-width-4-5">

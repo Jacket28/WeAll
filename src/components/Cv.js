@@ -1,10 +1,12 @@
 import {Backend} from "../services/backend";
-import "../pages/Offers.css";
+import "../design/Offers.css";
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
 
+
+/* Informations sur l'applier sélectionné  */
 export const Cv = (props) => {
-    const {applier, softskills, experience, langue, sejour, competence, formation} = props;
+    const {applier, softskills, experience, langue, competence, formation} = props;
     const history = useHistory();
 
     return (
@@ -20,7 +22,8 @@ export const Cv = (props) => {
                                     <button className="btn-block btn-color" type="submit" onClick={() => {
                                         localStorage.setItem("idRecipient", applier.id_user);
                                         history.push("/conversation");
-                                    }}>Conversation</button>
+                                    }}>Conversation
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -71,7 +74,6 @@ export const Cv = (props) => {
                                                         </div>
                                                     );
                                                 }) : null}
-
                                         </div>
                                     </div>
                                 </li>
@@ -99,7 +101,6 @@ export const Cv = (props) => {
                                                         </div>
                                                     );
                                                 }) : null}
-
                                         </div>
                                     </div>
                                 </li>
@@ -133,10 +134,8 @@ export const Cv = (props) => {
                                                     return (
                                                         <div className="uk-grid ">
                                                             <div className="uk-width-1-4">{l.langue}</div>
-
                                                             <div className="uk-width-1-4">{l.niveau}</div>
                                                             <div className="uk-width-1-4">{l.certificat}</div>
-
                                                             <div
                                                                 className="uk-width-1-4">
                                                                 {l.sejours ?
@@ -147,12 +146,9 @@ export const Cv = (props) => {
                                                                     }) : null
                                                                 }
                                                             </div>
-
-
                                                         </div>
                                                     );
                                                 }) : null}
-
                                         </div>
                                     </div>
                                 </li>
@@ -169,15 +165,11 @@ export const Cv = (props) => {
                                             }) : null}
                                     </div>
                                 </li>
-
-
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </>
     )
 }
