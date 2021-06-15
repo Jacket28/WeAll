@@ -7,10 +7,14 @@ import React from "react";
 import {NavigationBar} from "./pages/NavigationBar";
 import {Offers} from "./pages/Offers";
 import {Appliers} from "./pages/Appliers";
+import {useIsUserLoggedInContext} from "./services/login-service";
 
 /* Structure de notre app avec les différentes routes */
 function App() {
-  return (
+
+
+
+    return (
       <div className="App">
         <BrowserRouter>
           <NavigationBar />

@@ -9,7 +9,7 @@ export const Offer = (props) => {
 
     return (
         <>
-            <div className="uk-grid">
+            <div className="uk-grid uk-grid-match">
                 <div className="uk-width-2-3">
                     <div className="uk-card uk-card-default uk-width-1-1@m">
                         <div className="uk-card-header">
