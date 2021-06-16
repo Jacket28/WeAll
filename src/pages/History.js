@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Backend} from "../services/backend";
 import {IS_ENTREPRISE} from "../utils/request";
 import {useIsUserLoggedInContext} from "../services/login-service";
+import '../design/Conversation.css';
 
 export default function History() {
     // Hold the list of companies in the component state
@@ -34,7 +35,7 @@ export default function History() {
 
     return (
         <>
-            <ul>
+            <ul id="listContact">
                 {conversation
                     .sort((a, b) => a.id_user2 - b.id_user2)
                     .map((c) => (
