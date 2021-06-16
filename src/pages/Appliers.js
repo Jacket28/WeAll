@@ -5,12 +5,12 @@ import {Cv} from "../components/Cv";
 
 /* Liste des postulants */
 export const Appliers = () => {
-    const [appliers, setAppliers] = useState([]);
-    const [clickedApplier, setClickedApplier] = useState([]);
-    const [softskills, setSoftskills] = useState([]);
-    const [experience, setExperience] = useState([]);
-    const [langue, setLangue] = useState([]);
-    const [competence, setCompetence] = useState([]);
+    const [appliers, setAppliers] = useState(null);
+    const [clickedApplier, setClickedApplier] = useState(null);
+    const [softskills, setSoftskills] = useState(null);
+    const [experience, setExperience] = useState(null);
+    const [langue, setLangue] = useState(null);
+    const [competence, setCompetence] = useState(null);
     const [formation, setFormation] = useState(null);
 
 
@@ -47,7 +47,7 @@ export const Appliers = () => {
     }, [clickedApplier]);
 
     React.useEffect(() => {
-        Backend.getFormations(clickedApplier.id_postulant).then((f) => {
+        Backend.getFormations(clickedApplier?.id_postulant).then((f) => {
             setFormation(f);
         });
     }, [clickedApplier]);

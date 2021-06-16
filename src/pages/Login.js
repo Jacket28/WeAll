@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Backend} from "../services/backend";
-import {TOKEN_STORAGE_KEY} from "../utils/request";
+import {IS_ENTREPRISE, TOKEN_STORAGE_KEY} from "../utils/request";
 import {useHistory} from "react-router-dom";
 
 import '../design/Login.css';
@@ -32,11 +32,12 @@ export default function Login() {
             // Save the token to localStorage & redirect to the home page
             localStorage.setItem(TOKEN_STORAGE_KEY, loginData.token);
             localStorage.setItem("loginId", loginData.userId);
-            localStorage.setItem("userType", loginData.isEnterprise);
-            console.log(localStorage.getItem("userType"));
 
-            dispatch({type: "LOG_IN"}); // attribution du state au contexte
-            console.log();
+            //localStorage.setItem("userType", loginData.isEnterprise);
+            localStorage.setItem(IS_ENTREPRISE, loginData.isEnterprise);
+
+            dispatch({type: "LOG_IN", isEntreprise: loginData.isEnterprise}); // attribution du state au contexte
+
             // Redirect to the home page
             history.push("/");
         } catch (e) {
