@@ -63,3 +63,7 @@
     padding-left: 0px;
     padding-right: 50px;
 }
+
+.uk-card-badge {
+    background-color: var(--dark_background);
+}
