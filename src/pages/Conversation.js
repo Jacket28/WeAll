@@ -6,7 +6,7 @@ import Delete from "../components/Delete";
 import {Backend} from "../services/backend";
 import History from "./History";
 
-class App extends Component {
+class Conversation extends Component {
 
     render() {
         return (
@@ -43,4 +43,4 @@ class App extends Component {
 
 }
 
-export default App;
+export default Conversation;

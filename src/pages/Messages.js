@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {createRef, useEffect, useRef, useState} from "react";
 import {Backend} from "../services/backend";
 
 export default function Messages() {
     // Hold the list of companies in the component state
     const [messages, setMessages] = useState([]);
+
 
     // Load the companies on component mounting
     useEffect(() => {
@@ -31,10 +32,10 @@ export default function Messages() {
 
         return (
             <>
-                <li className={className}>
+                <li className={className} >
                  <span className="avatar"/>
                     <div className="Message-content">
-                        <div className="text">{m.message}</div>
+                        <div className="text" >{m.message}</div>
                     </div>
                 </li>
             </>

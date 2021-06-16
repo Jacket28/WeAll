@@ -66,7 +66,7 @@ export const Cv = (props) => {
                                                                 <p className="uk-card-title uk-margin-remove-bottom">{f.institut}</p>
                                                                 <p className="uk-text-meta uk-margin-remove-top">{f.cursus}</p>
                                                                 <p className="uk-text-meta uk-margin-remove-top">Obtenu
-                                                                    en {f.date_fin}</p>
+                                                                    en {f.date_fin.slice(0,10)}</p>
                                                             </div>
 
                                                         </div>
@@ -91,7 +91,7 @@ export const Cv = (props) => {
                                                             <div
                                                                 className="uk-card uk-card-default uk-card-body uk-margin-bottom">
                                                                 <div
-                                                                    className="uk-card-badge uk-label">{e.date_debut} - {e.date_fin}</div>
+                                                                    className="uk-card-badge uk-label">{e.date_debut.slice(0,10)} - {e.date_fin.slice(0,10)}</div>
                                                                 <p className="uk-card-title">{e.poste} auprès
                                                                     de {e.entreprise}</p>
                                                                 <p className="uk-text-meta">Domaine : {e.id_secteur}</p>

@@ -1,6 +1,5 @@
 .Conversation {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     height: 80vh;
     margin-left: auto;
@@ -138,9 +137,16 @@ formChat {
 }
 
 #listContact{
-
+    height: 155px!important;
+    width: 335px!important;
+    margin-right: 50px;
     color: white;
     cursor : pointer;
+
+}
+
+#profil {
+    width: 80px!important;
 
 }
 

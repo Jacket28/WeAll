@@ -39,9 +39,9 @@ export default function History() {
                 {conversation
                     .sort((a, b) => a.id_user2 - b.id_user2)
                     .map((c) => (
-                    <li key={c.id_user2} onClick={() => {
+                    <li id="profil" key={c.id_user2} onClick={() => {
                         localStorage.setItem("idRecipient", c.id_user2);
-                    }}>{c.id_user2}, {getValeur(c)}</li>
+                    }}>Profil {c.id_user2}</li>
                 ))}
             </ul>
         </>
