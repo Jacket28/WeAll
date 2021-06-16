@@ -37,7 +37,8 @@ class App extends Component {
     }
 
     onSendMessage = (message) => {
-        Backend.setMessage(localStorage.getItem("idRecipient"), message);
+        if(message!="")
+            Backend.setMessage(localStorage.getItem("idRecipient"), message);
     }
 
 }

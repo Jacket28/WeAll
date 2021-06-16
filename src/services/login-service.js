@@ -14,7 +14,7 @@ export const LoginContext = React.createContext();
 function logReducer(state, action) {
     switch (action.type) {
         case "LOG_IN": {
-            return { isLoggedIn: true };
+            return { isLoggedIn: true, isEntreprise :localStorage.getItem("userType")};
         }
         case "LOG_OUT": {
             return { isLoggedIn: false };
@@ -32,7 +32,7 @@ function logReducer(state, action) {
 // faire passer la valeur dans notre app
 export function LoginProvider({ children }) {
 
-    const entreprise = localStorage.getItem(ENTREPRISE_KEY)
+    const entreprise = localStorage.getItem("userType");
     const firstState = {
         isLoggedIn: isTokenStored(),
         isEntreprise: entreprise == 'false' ? false: true

@@ -9,7 +9,7 @@ export default function History() {
     useEffect(() => {
         const interval = setInterval(() => {
             fetchHistory();
-        }, 2500);
+        }, 1500);
         return () => clearInterval(interval);
     }, []);
 
@@ -30,7 +30,9 @@ export default function History() {
     return (
         <>
             <ul>
-                {conversation.map((c) => (
+                {conversation
+                    .sort((a, b) => a.id_user2 - b.id_user2)
+                    .map((c) => (
                     <li key={c.id_user2} onClick={() => {
                         localStorage.setItem("idRecipient", c.id_user2);
                     }}>{c.id_user2}, {getValeur(c)}</li>

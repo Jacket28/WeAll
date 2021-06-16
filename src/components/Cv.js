@@ -29,7 +29,7 @@ export const Cv = (props) => {
                         </div>
                         <div className="uk-card-body">
                             <ul uk-accordion="multiple: true">
-                                <li>
+                                <li class="uk-open">
                                     <a className="uk-accordion-title" href="#">Informations</a>
                                     <div className="uk-accordion-content">
                                         <div className="uk-grid ">
@@ -50,7 +50,7 @@ export const Cv = (props) => {
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="uk-open">
                                     <a class="uk-accordion-title" href="#">Formation</a>
                                     <div className="uk-accordion-content">
                                         <div>
@@ -77,7 +77,7 @@ export const Cv = (props) => {
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="uk-open">
                                     <a className="uk-accordion-title" href="#">Expériences professionnelles</a>
                                     <div className="uk-accordion-content">
                                         <div>
@@ -104,7 +104,7 @@ export const Cv = (props) => {
                                         </div>
                                     </div>
                                 </li>
-                                <li>
+                                <li class="uk-open">
                                     <a className="uk-accordion-title" href="#">Compétences</a>
                                     <div className="uk-accordion-content">
                                         {competence ?
@@ -117,7 +117,7 @@ export const Cv = (props) => {
                                             }) : null}
                                     </div>
                                 </li>
-                                <li>
+                                <li class="uk-open">
                                     <a className="uk-accordion-title" href="#">Langues</a>
                                     <div className="uk-accordion-content">
                                         <div>
@@ -152,8 +152,8 @@ export const Cv = (props) => {
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <a className="uk-accordion-title" href="#">Softskills</a>
+                                <li class="uk-open">
+                                    <a className="uk-accordion-title" href="#" >Softskills</a>
                                     <div className="uk-accordion-content">
                                         {softskills ?
                                             softskills.map((s) => {

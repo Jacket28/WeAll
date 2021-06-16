@@ -33,6 +33,7 @@ export default function Login() {
             localStorage.setItem(TOKEN_STORAGE_KEY, loginData.token);
             localStorage.setItem("loginId", loginData.userId);
             localStorage.setItem("userType", loginData.isEnterprise);
+            console.log(localStorage.getItem("userType"));
 
             dispatch({type: "LOG_IN"}); // attribution du state au contexte
             console.log();
