@@ -1,5 +1,6 @@
 import React, {createRef, useEffect, useRef, useState} from "react";
 import {Backend} from "../services/backend";
+import logo from"./user.svg";
 
 export default function Messages() {
     // Hold the list of companies in the component state
@@ -33,13 +34,17 @@ export default function Messages() {
         return (
             <>
                 <li className={className} >
-                 <span className="avatar"/>
+                    {<img className="avatar" src={logo}/>}
                     <div className="Message-content">
                         <div className="text" >{m.message}</div>
                     </div>
                 </li>
             </>
         );
+    }
+
+    function getImage(){
+
     }
 
     return (
