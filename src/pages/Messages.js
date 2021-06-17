@@ -34,17 +34,13 @@ export default function Messages() {
         return (
             <>
                 <li className={className} >
-                    {<img className="avatar" src={logo}/>}
+                    <img className="avatar" src={logo}/>
                     <div className="Message-content">
                         <div className="text" >{m.message}</div>
                     </div>
                 </li>
             </>
         );
-    }
-
-    function getImage(){
-
     }
 
     return (
