@@ -12,18 +12,27 @@ import {useIsUserLoggedInContext} from "./services/login-service";
 /* Structure de notre app avec les différentes routes */
 function App() {
 
-
+    const {state, dispatch} = useIsUserLoggedInContext();
+    const {isLoggedIn, isEntreprise} = state;
 
     return (
       <div className="App">
         <BrowserRouter>
           <NavigationBar />
             <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/conversation" component={Conversation} />
-                <Route path="/appliers" component={Appliers} />
-                <Route path="/offers" component={Offers} />
-                <Route path="/login" component={Login} />
+                {isLoggedIn ?
+                    <>
+                        <Route path="/" exact component={Home}/>
+                        <Route path="/conversation" component={Conversation}/>
+                        {isEntreprise ?
+                            <Route path="/appliers" component={Appliers} />
+                            :
+                            <Route path="/offers" component={Offers} />
+                        }
+                    </>
+                    :
+                        <Route path="/login" component={Login} />
+                }
             </Switch>
         </BrowserRouter>
       </div>

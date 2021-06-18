@@ -14,16 +14,16 @@ export const LoginContext = React.createContext();
 function logReducer(state, action) {
     switch (action.type) {
         case "LOG_IN": {
-            return { isLoggedIn: true, isEntreprise: action.isEntreprise };
+            return { ...state, isLoggedIn: action.isLoggedIn, isEntreprise: action.isEntreprise };
         }
         case "LOG_OUT": {
-            return { isLoggedIn: false, isEntreprise: null};
+            return { ...state, isLoggedIn: false, isEntreprise: null};
         }
         case "LOG_ERROR": {
-            return { isLoggedIn: false, error: action.error };
+            return { ...state, isLoggedIn: false, isEntreprise: null, error: action.error };
         }
         default: {
-            return { isLoggedIn: false };
+            return state;
         }
     }
 }
@@ -32,8 +32,11 @@ function logReducer(state, action) {
 // faire passer la valeur dans notre app
 export function LoginProvider({ children }) {
 
+
     const entreprise = localStorage.getItem(IS_ENTREPRISE);
+
     console.log("Entreprise: " + entreprise);
+
     const firstState = {
         isLoggedIn: isTokenStored(),
         isEntreprise: entreprise

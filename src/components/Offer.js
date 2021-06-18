@@ -65,7 +65,7 @@ export const Offer = (props) => {
                             </ul>
                         </div>
                         <div className="uk-card-footer">
-                            <a href={offer.url} className="uk-button uk-button-text">Voir plus d'informations sur
+                            <a href={offer.url} target="_blank" className="uk-button uk-button-text">Voir plus d'informations sur
                                 l'offre</a>
                         </div>
                     </div>
