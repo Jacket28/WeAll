@@ -36,7 +36,7 @@ export default function Login() {
             //localStorage.setItem("userType", loginData.isEnterprise);
             localStorage.setItem(IS_ENTREPRISE, loginData.isEnterprise);
 
-            dispatch({type: "LOG_IN", isEntreprise: loginData.isEnterprise}); // attribution du state au contexte
+            dispatch({type: "LOG_IN", isLoggedIn: true, isEntreprise: loginData.isEnterprise}); // attribution du state au contexte
 
             // Redirect to the home page
             history.push("/");

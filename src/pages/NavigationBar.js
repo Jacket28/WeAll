@@ -14,7 +14,7 @@ export const NavigationBar = () => {
 
     const logout = (e) => {
         e.preventDefault();
-        dispatch({type: "LOG_OFF"}); // set le state
+        dispatch({type: "LOG_OUT"}); // set le state
         cleanTokenStored(); // reset
     };
 
