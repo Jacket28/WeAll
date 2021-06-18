@@ -74,7 +74,10 @@ export const Appliers = () => {
                     </div>
                 </div>
                 <div id="cvDetails" className="detailsSection cv uk-width-4-5">
+
+                    <div uk-sticky="bottom: true">
                     {clickedApplier && appliers ? (<Cv applier={clickedApplier} softskills={softskills} experience={experience} langue={langue} competence={competence} formation={formation}></Cv>) : null}
+                    </div>
                 </div>
             </div>
         </>
