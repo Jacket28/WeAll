@@ -39,7 +39,7 @@ export function LoginProvider({ children }) {
 
     const firstState = {
         isLoggedIn: isTokenStored(),
-        isEntreprise: entreprise
+        isEntreprise: entreprise == 'false' ? false : true
     }
 
     const [state, dispatch] = React.useReducer(logReducer, firstState);
