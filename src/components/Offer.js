@@ -14,18 +14,20 @@ export const Offer = (props) => {
                     <div className="uk-card uk-card-default uk-width-1-1@m">
                         <div className="uk-card-header">
                             <div className="uk-grid-small uk-flex-middle" uk-grid>
-                                <div className="uk-width-auto">
-                                </div>
-                                <div className="uk-width-expand">
-                                    <h4 className="uk-card-title uk-margin-remove-bottom">{offer.nom} ({offer.taux})</h4>
-                                    <p className="uk-text-meta uk-margin-remove-top">{offer.contrat}</p>
-                                    <button className="btn-block btn-color" type="submit" onClick={() => {
-                                        localStorage.setItem("idRecipient", entreprise.id_user);
-                                        console.log(entreprise.id_user);
-                                        console.log(localStorage.getItem("loginId"));
-                                        history.push("/conversation");
-                                    }}>Conversation
-                                    </button>
+                                <div className="uk-flex">
+                                    <div className="uk-width-2-3">
+                                        <h4 className="uk-card-title uk-margin-remove-bottom">{offer.nom} ({offer.taux})</h4>
+                                        <p className="uk-text-meta uk-margin-remove-top uk-margin-remove-bottom">{offer.contrat}</p>
+                                    </div>
+                                    <div className="uk-width-1-3">
+                                        <button className="uk-align-right uk-margin-remove-bottom btn-block btn-color" type="submit" onClick={() => {
+                                            localStorage.setItem("idRecipient", entreprise.id_user);
+                                            console.log(entreprise.id_user);
+                                            console.log(localStorage.getItem("loginId"));
+                                            history.push("/conversation");
+                                        }}>Conversation
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
