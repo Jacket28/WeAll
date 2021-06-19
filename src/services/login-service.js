@@ -1,6 +1,6 @@
 import {isTokenStored} from "../utils/utils";
 import React from "react";
-import {TOKEN_STORAGE_KEY, IS_ENTREPRISE} from "../utils/request";
+import {IS_ENTREPRISE} from "../utils/request";
 
 // création d'un contexte pour gérer le statut de login dans toute l'app
 // + simple que les props dans ce cas

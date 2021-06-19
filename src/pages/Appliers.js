@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Backend} from "../services/backend";
-import {Offer} from "../components/Offer";
 import {Cv} from "../components/Cv";
 
 /* Liste des postulants */
@@ -13,14 +12,12 @@ export const Appliers = () => {
     const [competence, setCompetence] = useState(null);
     const [formation, setFormation] = useState(null);
 
-
     /* Récupération des données via l'API (backend) */
     React.useEffect(() => {
         Backend.getPostulants().then((p) => {
             setAppliers(p);
         });
     }, []);
-
 
     React.useEffect(() => {
         Backend.getSoftskills(clickedApplier?.id_postulant).then((softskills) => {

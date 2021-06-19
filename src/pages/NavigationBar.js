@@ -1,6 +1,6 @@
 import {useIsUserLoggedInContext} from "../services/login-service";
 import {cleanTokenStored} from "../utils/utils";
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 import React from "react";
 
 

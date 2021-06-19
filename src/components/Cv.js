@@ -1,6 +1,5 @@
-import {Backend} from "../services/backend";
 import "../design/Offers.css";
-import React, {useState} from "react";
+import React from "react";
 import {useHistory} from "react-router-dom";
 
 
